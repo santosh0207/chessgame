@@ -1,0 +1,48 @@
+.GridContainer{
+    background-color:magenta;    
+}
+.Container{
+    display: flex;
+    background-color: aliceblue;
+    justify-content: space-around;
+    padding: 5px 5px 5px 5px;
+    
+}
+.DivAlign{
+    display: flex;
+    flex-direction: row;
+}
+
+.whiteDiv {
+    background-color: aqua;
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
+.BlackDiv {
+    background-color: aqua;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.Title{
+    border: 1px solid gray;
+    background-color:blueviolet;
+    padding: 10px;
+    font-size: large;
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+.listContainer{
+    
+     
+}
+.listContainer ul{
+    max-height: inherit;
+    box-sizing: border-box;
+
+}
+.listContainer ul li{
+    list-style: none;
+}

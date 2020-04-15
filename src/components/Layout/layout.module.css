@@ -1,0 +1,14 @@
+.Layout{
+    width: 100%;
+    background-color: aqua;
+    text-align: center;
+}
+.Layout content{
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+}
+
+.Layout footer{
+    background-color: aliceblue;
+}
