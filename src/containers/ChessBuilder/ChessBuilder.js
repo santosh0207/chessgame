@@ -123,31 +123,29 @@ export default class ChessBuilder extends Component {
                     />
                 </li> 
             )
-            // var tempArr=[];
-            // for(let j=i;j<i+8;j++){
-            //     tempArr.push(mapValue[j]);
-            // }
-            // i+=7;
-            // gValue.push(<div className={classes.DivAlign} key={i}>{tempArr}</div>);
-        } 
 
-        //console.log(gValue,"gvalue")
+        } 
+        deadPiecesWhite = []
         return (
             <div className={classes.Container} >
                 <div className={classes.whiteDiv}>
                    <div className={classes.Title}>White Pieces</div>
-
                     <div className={classes.listContainer}>
                         <ul>
                             {deadPiecesWhite}
                         </ul>
-                    </div>
-                    
-                </div>  
+                    </div>    
+                </div>
+                  
                 <div className={classes.GridContainer}>{gValue}</div>
-                <div className ={classes.BlackDiv}>
-                    <div className={classes.Title}>Black dead pieces</div>
 
+                <div className ={classes.BlackDiv}>
+                    <div className={classes.Title}>Black Pieces</div>
+                    <div className={classes.listContainer}>
+                        <ul>
+                            {deadPiecesWhite}
+                        </ul>
+                    </div>   
                 </div>
             </div>
         )

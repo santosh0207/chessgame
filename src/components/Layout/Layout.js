@@ -1,7 +1,8 @@
 import React from 'react'
 import classes from './layout.module.css'
 import Header from '../Header/header';
-import ChessBuilder from '../../containers/ChessBuilder/ChessBuilder'
+import ChessBuilder from '../../containers/ChessBuilder/ChessBuilder';
+import Footer from '../../components/Footer/Footer'
 export default function Layout() {
     console.log("Inside Layout")
     return (
@@ -11,7 +12,9 @@ export default function Layout() {
                  <ChessBuilder />
             </content>
             
-            <footer>Footer</footer>
+            <footer>
+                <Footer />
+            </footer>
         </div>
     )
 }

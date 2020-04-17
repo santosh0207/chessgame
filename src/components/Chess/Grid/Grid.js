@@ -6,9 +6,9 @@ export default function Grid(props) {
     let currRow = Math.floor(props.indexValue/8);
     let checkColor;
     if(currRow% 2=== 0){//if currRow is even then even index are black
-        checkColor = {backgroundColor:"#A9A9A9"};  
+        checkColor =   ((props.indexValue%2))? {backgroundColor:"#FFFAFA"}:{backgroundColor:"#A9A9A9"}; 
     }else{
-        checkColor = {backgroundColor:"#FFFAFA"};
+        checkColor =((props.indexValue%2))? {backgroundColor:"#A9A9A9"}:{backgroundColor:"#FFFAFA"}; 
     }
     
     if(props.isDeadEle)

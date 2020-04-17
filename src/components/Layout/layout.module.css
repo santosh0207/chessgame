@@ -4,11 +4,13 @@
     text-align: center;
 }
 .Layout content{
-    background-color: pink;
+    background-color:aliceblue;
     display: flex;
     justify-content: center;
+    height: calc(100vh - 50px)
 }
 
-.Layout footer{
-    background-color: aliceblue;
+footer{
+    display: flex;
+    justify-content: center;
 }

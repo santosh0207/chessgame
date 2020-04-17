@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { Component } from 'react'
 import classes from './header.module.css';
-import Menu from '../Navigation/Menu/Menu'
-
-export default function Header() {
+import MusicToggle from '../MusicToggle/MusicToggle'
+export default class Header extends Component {
     
-    return (
-        <div className={classes.Header}>
-            <Menu />
-            <p>logo</p>
-            <p>Navigation</p>
-        </div>
-    )
+
+    
+    render(){
+        return (
+            <div className={classes.Header}>
+                <p>Logo</p>
+                <p>this is message</p>
+                <div className={classes.Buttons}>  
+                    <MusicToggle>Music</MusicToggle>
+                    <p>undo on/off</p>
+                </div>
+            </div>
+        )
+    }
+
+
+
 }

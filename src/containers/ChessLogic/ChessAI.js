@@ -37,8 +37,7 @@ export const allPossibleValidMove = (game) =>{
     if(game[nextIndex].value !== ''){
         game[nextIndex].isAlive = false;
     }
-    
-    
+
     game[nextIndex] = game[currIndex];
     game[nextIndex].numMoves++;
     game[currIndex] = {
@@ -47,7 +46,6 @@ export const allPossibleValidMove = (game) =>{
     }
 
     return game;
-
 }
 
 
