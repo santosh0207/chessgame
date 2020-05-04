@@ -52,17 +52,17 @@ export default class ChessBuilder extends Component {
 
     gameStart =()=>{
         console.log(window.$gameObject_allMove,"Inside gameStart")
-        setTimeout(()=>{
-            let newPiece = playAI(this.state);
-            if(newPiece){
-                if(!isPawnReachesLastRow(newPiece)){
-                    this.executeTheMove(newPiece.currentGameIndex,newPiece.nextMove,null);
-                }else{
-                    this.executeTheMove(newPiece.currentGameIndex,newPiece.nextMove,true);
-                }
-                setTimeout(this.gameStart, 200);
-            }
-        },200);
+        // setTimeout(()=>{
+        //     let newPiece = playAI(this.state);
+        //     if(newPiece){
+        //         if(!isPawnReachesLastRow(newPiece)){
+        //             this.executeTheMove(newPiece.currentGameIndex,newPiece.nextMove,null);
+        //         }else{
+        //             this.executeTheMove(newPiece.currentGameIndex,newPiece.nextMove,true);
+        //         }
+        //         setTimeout(this.gameStart, 200);
+        //     }
+        // },200);
     }
 
     executeTheMove =(currIndex, nextIndex, isPawnReached)=>{
