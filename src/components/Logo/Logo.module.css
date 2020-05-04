@@ -1,4 +1,4 @@
-.MusicContainer{
+.LogoContainer{
     background-color:#ADD8E6;
     text-align: center;
     padding: 8px;
@@ -6,8 +6,7 @@
     margin: 5px;
     height: 60%;
 }
-
-.MusicContainer img{
+.LogoContainer img{
     height: 100%;
     
 }

@@ -9,3 +9,10 @@ export const Data =()=>{
         "&#9815;", "&#9813;", "&#9812;", "&#9815;", "&#9816;", "&#9814;"
       ]
 }
+
+export const saveData = (game, currPlayer)=>{
+  
+    window.$gameObject_allMove.game.push(game);
+    window.$gameObject_allMove.currPlayer = currPlayer;
+
+}

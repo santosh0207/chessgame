@@ -19,12 +19,15 @@ export const checkMove = (_firstIndex, _secondIndex, pieceArray)=>{
                     } else
                         return false;
                 case "queen":
-                    if (firstIndex < secondIndex) {
+                    console.log(firstIndex,"Inside check logic  Queen ", secondIndex)
+                    if (firstIndex < secondIndex){
                         thrdVar = secondIndex;
                         secondIndex = firstIndex;
                         firstIndex = thrdVar;
                     }
                     if ((firstIndex - secondIndex) % numRow === 0) {//for same coloumn
+                        //console.log(firstIndex,"Inside check logic  Queen Same Coloumn ", secondIndex)
+
                         for (i = secondIndex + numRow; i <= firstIndex; i += numRow) {
                             if (pieceArray[i].color !== "none")
                                 break;
@@ -35,10 +38,13 @@ export const checkMove = (_firstIndex, _secondIndex, pieceArray)=>{
                             return false;
                         }
                     } else if (Math.floor(firstIndex / numRow) === Math.floor(secondIndex / numRow)) {//for same row
-                        for (let i = secondIndex + 1; i <= firstIndex; i++) {
+                        //console.log(firstIndex,"Inside check logic  Queen Same Row ", secondIndex)
+
+                        for ( i = secondIndex + 1; i <= firstIndex; i++) {
                             if (pieceArray[i].color !== "none")
                                 break;
                         }
+                        console.log(i,firstIndex)
                         if (i >= firstIndex)
                             return true;
                         else
@@ -81,6 +87,7 @@ export const checkMove = (_firstIndex, _secondIndex, pieceArray)=>{
                         else {
                             return false;
                         }
+                        
                     } else if (Math.floor(firstIndex / numRow) === Math.floor(secondIndex / numRow)) {//for same row
                         for (i = secondIndex + 1; i <= firstIndex; i++) {
                             if (pieceArray[i].color !== "none")
@@ -176,7 +183,6 @@ export const checkMove = (_firstIndex, _secondIndex, pieceArray)=>{
                             else
                                 return false;
                         }
-
                     }
                     break;
                 default:
@@ -190,12 +196,7 @@ export const checkMove = (_firstIndex, _secondIndex, pieceArray)=>{
 
 export const gridFactory = (value, color)=>{
     var obj = {};
-    obj.value = value;
-    obj.color = color;
-    if (value !== "") {
-        obj.isAlive = true;
-        obj.numMoves = 0;
-    }
+    obj.points = 0;
     if (value === "&#9820;" || value === "&#9814;") {
         obj.name = "rook";
         obj.points = 50;
@@ -215,6 +216,13 @@ export const gridFactory = (value, color)=>{
         obj.name = "pawn";
         obj.points = 10;
     }
+    if (value !== "") {
+        obj.isAlive = true;
+        obj.numMoves = 0;
+    }
+    obj.value = value;
+    obj.color = color;
+    
     return obj;
 }
 

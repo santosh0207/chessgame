@@ -1,5 +1,4 @@
-.MusicContainer{
-    background-color:#ADD8E6;
+.ButtonContainer{
     text-align: center;
     padding: 8px;
     padding-top: 5px;
@@ -7,7 +6,6 @@
     height: 60%;
 }
 
-.MusicContainer img{
+.ButtonContainer img{
     height: 100%;
-    
 }

@@ -1,48 +1,52 @@
-import {checkMove} from './ChessLogic';
-import {randomRange} from './HelperFunction';
+import { Knight } from './MoveEvaluator/Knight';
+import { Pawn } from './MoveEvaluator/Pawn';
+import { King } from './MoveEvaluator/King';
+import { Rook } from './MoveEvaluator/Rook';
+import { Bishop } from './MoveEvaluator/Bishop';
+
 /** For checkmove to work properly, 
  * Please pass the target index as first parameter and current index as secon parameter 
  * This is beacuse the code it self convertes and check for white and black pieces for two player game. 
  * */
-export const nextPossibleMoves = (ele, index, game)=>{
-    let PosArray = [];
-    let numRow = 8;
-    let tempEle = ele;
-    tempEle.currentGameIndex = index;
-    console.log('**********************',index,'******************************************')
-    switch(ele.name){
+export const nextPossibleMoves = (index, game ,currPlayer)=>{
+    //console.log('**********************',index,'******************************************')
+    let arr=[];
+    switch( game[index].name){
         case "pawn":
-                if(index >= 55)// pawn reached to last row
+                arr = [...Pawn(index,game,currPlayer)];
+                if(arr.length > 0)
+                    return arr;
+                else
                     break;
-                //Pawn can move 2 blocks ahead at first time 
-                if(ele.numMoves === 0){
-                    if(checkMove(index+(2*numRow),index, game)) {
-                        let _tempEle = Object.create(tempEle);//doing this because Objects Are refrence type so when we mutte the its the single copy which gets changed every time
-                        _tempEle['nextMove'] = (index + (2*numRow));
-                        PosArray.push(_tempEle); 
-                        console.log('****************************************************************')
-                    } 
-                }
-                // Pawn to move only 1 block ahead
-                if(checkMove(index+(numRow),index, game)) {
-                    let _tempEle = Object.create(tempEle);
-                    _tempEle['nextMove'] = index + (numRow);
-                    PosArray.push(_tempEle);
-                }    
-                //if there is a enemy piece left side --- to Kill
-                if(checkMove(index + (numRow-1),index, game)){
-                    let _tempEle = Object.create(tempEle);
-                    _tempEle['nextMove'] = index + (numRow-1);
-                    PosArray.push(_tempEle);
-                }                
-                //if there is a enemy piece right side --- to Kill
-                if(checkMove(index + (numRow+1),index, game)){
-                    let _tempEle = Object.create(tempEle);
-                    _tempEle['nextMove'] = index + (numRow+1);
-                    PosArray.push(_tempEle);
-                }
-                if(PosArray.length > 0)
-                    return PosArray;
+        case "knight":
+                arr = [...Knight(index,game)];
+                if(arr.length > 0)
+                    return arr;
+                else
+                    break;
+        case "king":
+                arr = [...King(index,game)];
+                if(arr.length > 0)
+                    return arr;
+                else
+                    break;
+        case "rook":
+                arr = [...Rook(index,game)];
+                if(arr.length > 0)
+                    return arr;
+                else
+                    break;
+        case "bishop":
+                arr = [...Bishop(index,game)];
+                if(arr.length > 0)
+                    return arr;
+                else
+                    break;
+        case "queen":
+                //console.log("**********  INSIDE QUEEN ********");
+                arr = [...Rook(index,game),...Bishop(index,game)];
+                if(arr.length > 0)
+                    return arr;
                 else
                     break;
         default :

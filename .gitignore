@@ -11,7 +11,7 @@ yarn.lock
 
 # production
 /build
-
+/chessapp
 # misc
 .DS_Store
 .env.local
