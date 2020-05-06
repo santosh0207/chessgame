@@ -10,7 +10,7 @@ let iterationCounter = 0;
 let boardPieceDepth = 4;
 
 export const playAI = (game)=>{ 
-   console.log("inside PlayAI");
+   //console.log("inside PlayAI");
    gameObjectOfAllMoves = [];
 
   //return allPossibleValidMove(game);
@@ -53,9 +53,9 @@ const checkMaxPossibleMove = (game, currPlayer)=>{
     }
 
 
-    console.log(gameObjectOfAllMoves.length,"*******************", gameObjectOfAllMoves)
+    //console.log(gameObjectOfAllMoves.length,"*******************", gameObjectOfAllMoves)
     var indexOfElement = boardEvaluator(gameObjectOfAllMoves,boardPieceDepth,currPlayer);
-    console.log(indexOfElement,"indexOfElement")
+    //console.log(indexOfElement,"indexOfElement")
     return gameObjectOfAllMoves[indexOfElement].piece;//this will return the element
 }
 

@@ -1,5 +1,5 @@
 export const boardEvaluator = (gameBoard, boardPieceDepth,currPlayer)=>{
-    console.log("Inside Board Evaluator");   
+    //console.log("Inside Board Evaluator");   
     let allSameMoveArray = [];
     let tempValueHolderArr =[]
     for(let i=0;i<gameBoard.length;i++){
@@ -26,7 +26,7 @@ export const boardEvaluator = (gameBoard, boardPieceDepth,currPlayer)=>{
     if(gameBoard[maxIndex]!==null){
         if(gameBoard[maxIndex]["movesUptoThree"].length>0){ 
             let check = checkMoveRepeatition(gameBoard[maxIndex]["movesUptoThree"][boardPieceDepth-1].game)//game board of max value of index 
-            console.log(check,"repettion check")
+            //console.log(check,"repettion check")
             if(check){
                 gameBoard[maxIndex] = null;
                 boardEvaluator(gameBoard,boardPieceDepth,currPlayer);

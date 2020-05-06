@@ -19,7 +19,7 @@ export default class Header extends Component {
     }
     
     render(){
-        console.log(this.state.dateAndTime,"time in Header")
+        //console.log(this.state.dateAndTime,"time in Header")
         return (
             <div className={classes.Header}>
                 <Logo />

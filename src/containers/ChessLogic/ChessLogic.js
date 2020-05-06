@@ -19,7 +19,7 @@ export const checkMove = (_firstIndex, _secondIndex, pieceArray)=>{
                     } else
                         return false;
                 case "queen":
-                    console.log(firstIndex,"Inside check logic  Queen ", secondIndex)
+                    //console.log(firstIndex,"Inside check logic  Queen ", secondIndex)
                     if (firstIndex < secondIndex){
                         thrdVar = secondIndex;
                         secondIndex = firstIndex;

@@ -17,7 +17,7 @@ export default class ChessBuilder extends Component {
     }
     currEleIndex = null;
     onDragStartHandler = (event,index)=>{
-        console.log("Ondrag start handler", index); 
+        //console.log("Ondrag start handler", index); 
         this.currEleIndex = index;
     }
 
@@ -51,7 +51,7 @@ export default class ChessBuilder extends Component {
     }
 
     gameStart =()=>{
-        console.log(window.$gameObject_allMove,"Inside gameStart")
+        //console.log(window.$gameObject_allMove,"Inside gameStart")
         // setTimeout(()=>{
         //     let newPiece = playAI(this.state);
         //     if(newPiece){
