@@ -44,7 +44,7 @@ export const checkMove = (_firstIndex, _secondIndex, pieceArray)=>{
                             if (pieceArray[i].color !== "none")
                                 break;
                         }
-                        console.log(i,firstIndex)
+                        //console.log(i,firstIndex)
                         if (i >= firstIndex)
                             return true;
                         else
