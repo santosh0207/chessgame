@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <div className={classes.Footer}>
               <div className={classes.InnerDiv} >© 2020 Copyright:
-                    <a href="/"> Sainty Chess App</a>
+                    <a href="/"> Sainty Apps</a>
                </div>
         </div>
     )

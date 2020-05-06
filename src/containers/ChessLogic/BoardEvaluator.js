@@ -7,6 +7,8 @@ export const boardEvaluator = (gameBoard, boardPieceDepth,currPlayer)=>{
             if(gameBoard[i]["movesUptoThree"].length>0){ 
                 let boardValue = calculateBoard(gameBoard[i]["movesUptoThree"][gameBoard[i]["movesUptoThree"].length-1].game, currPlayer);
                 tempValueHolderArr.push(boardValue);
+            }else{
+                tempValueHolderArr.push(-Infinity);
             }
         }
     }
